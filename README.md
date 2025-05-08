@@ -2,7 +2,7 @@
 
 > Read the full article: https://inspector.dev/php-ai-agent-summarizing-youtube-videos/
 
-![](youtube-php-ai-agent.png)
+![](php-ai-agent-image-analysis.png)
 
 This repository contains the PHP implementation of an AI Agents summarizing YouTube videos.
 It is built using the [Neuron AI](https://github.com/inspector-apm/neuron-ai) package.
