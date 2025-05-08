@@ -1,16 +1,14 @@
 <?php
 
 
-namespace App\YouTube;
+namespace App;
 
 use NeuronAI\Agent;
 use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\Anthropic\Anthropic;
 use NeuronAI\SystemPrompt;
-use NeuronAI\Tools\Tool;
-use NeuronAI\Tools\ToolProperty;
 
-class YouTubeAgent extends Agent
+class ImageClassifierAgent extends Agent
 {
     protected function provider(): AIProviderInterface
     {
@@ -34,22 +32,5 @@ class YouTubeAgent extends Agent
                 "After the summary add a list of three sentences as the three most important takeaways from the video.",
             ]
         );
-    }
-
-    protected function tools(): array
-    {
-        return [
-            Tool::make(
-                'get_transcription',
-                'Retrieve the transcription of a youtube video.',
-            )->addProperty(
-                new ToolProperty(
-                    name: 'video_url',
-                    type: 'string',
-                    description: 'The URL of the YouTube video.',
-                    required: true
-                )
-            )->setCallable(new GetTranscription())
-        ];
     }
 }

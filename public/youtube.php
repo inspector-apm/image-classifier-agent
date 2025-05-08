@@ -8,7 +8,7 @@
  * https://www.youtube.com/watch?v=aoPcbZEFZZ0
  */
 
-use App\YouTube\YouTubeAgent;
+use App\ImageClassifierAgent;
 use Inspector\Configuration;
 use Inspector\Inspector;
 use NeuronAI\Chat\Messages\UserMessage;
@@ -19,7 +19,7 @@ include __DIR__ . '/../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/..');
 $dotenv->load();
 
-$agent = YouTubeAgent::make();
+$agent = ImageClassifierAgent::make();
 
 if (!empty($_ENV['INSPECTOR_INGESTION_KEY'])) {
     $agent->observe(
